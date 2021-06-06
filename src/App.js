@@ -1,23 +1,16 @@
 import React from 'react';
 import './App.css';
-
-//Componentes de tipo clase
-//Componentes de tipo function
+//Components
+import NavBar from './components/NavBar/NavBar'
+import ItemsListContainer from './components/ItemsListContainer/ItemsListContainer'
 
 class App extends React.Component{
   render(){
     return (
-      <>
-        <h1>Clasifix</h1>
-        <nav>
-          <ul>
-            <li><a href="#">Entradas</a></li>
-            <li><a href="#">Platos Principales</a></li>
-            <li><a href="#">Postres</a></li>
-            <li><a href="#">Bebidas</a></li>
-          </ul>
-        </nav>
-      </>
+      <div>
+          <NavBar/>
+          <ItemsListContainer description={"Lorem ipsum sahere del parent por intum larme blade the splaning for todem las clasking plarfere"}/>
+      </div>
     )
   }
 }
