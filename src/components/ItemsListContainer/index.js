@@ -9,4 +9,4 @@ function ItemsListContainer(props) {
     )
 }
 
-export default ItemsListContainer
+export default ItemsListContainer;

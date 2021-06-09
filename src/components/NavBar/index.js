@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './NavBar.css';
 //
-import CartWidget from './../CartWidget/CartWidget'
+import CartWidget from '../CartWidget/index'
 
 class NavBar extends Component {
     render() {

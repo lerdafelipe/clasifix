@@ -1,0 +1,35 @@
+.counter-container{
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center;
+    align-items: center;*/
+    padding: 0;
+    color: whitesmoke;
+    width: 100%;
+}
+.counter-container p{
+    min-width: 85%;
+    margin: 0;
+    border-top: 1px solid #354a67;
+    border-bottom: 1px solid #354a67;
+    background-color: #ddad49;
+}
+.counter-container button{
+    border: 1px solid #354a67;
+    margin: 0;
+    padding: 0px 7px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.counter-container button:nth-child(1){
+    background-color: chartreuse;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    color: black;
+}
+.counter-container button:nth-child(3){
+    background-color: rgb(185, 68, 68);
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    color: black;
+}
