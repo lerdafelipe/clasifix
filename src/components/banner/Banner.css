@@ -1,0 +1,9 @@
+.banner{
+    height: 150px;
+    width: 100vw;
+    overflow: hidden;
+}
+.banner img{
+    width: 100%;
+    margin-top: -50px;
+}

@@ -1,14 +1,16 @@
 .counter-container{
     display: flex;
     flex-direction: row;
-    /*justify-content: center;
-    align-items: center;*/
+    justify-content: center;
+    align-items: center;
     padding: 0;
     color: whitesmoke;
-    width: 100%;
+    width: 258px;
+    margin: auto;
 }
 .counter-container p{
-    min-width: 85%;
+    min-width: 81.5%;
+    text-align: center;
     margin: 0;
     border-top: 1px solid #354a67;
     border-bottom: 1px solid #354a67;

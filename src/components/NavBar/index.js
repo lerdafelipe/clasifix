@@ -8,15 +8,14 @@ class NavBar extends Component {
         return (
             <>
                 <nav>
-                    <h1>Clasifix</h1>
                     <ul>
-                        <li><a href="#">Picadas</a></li>
-                        <li><a href="#">Entradas</a></li>
-                        <li><a href="#">Platos</a></li>
-                        <li><a href="#">Bebidas</a></li>
-                        <li><a href="#">Cocteles</a></li>
-                        <li><CartWidget/></li>
+                        <li><p>Picadas</p></li>
+                        <li><p>Entradas</p></li>
+                        <li><p>Platos</p></li>
+                        <li><p>Bebidas</p></li>
+                        <li><p>Cocteles</p></li>
                     </ul>
+                    <CartWidget/>
                 </nav>
             </>
         )

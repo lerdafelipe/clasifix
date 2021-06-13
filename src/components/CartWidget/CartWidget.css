@@ -1,7 +1,11 @@
 svg{
     font-size: 18px;
     padding: 8px;
-    border: 1px solid;
+    border-left: 1px solid #c4c4c4;
     cursor: pointer;
-    margin-bottom: -8px;
+    margin-bottom: -5px;
+    justify-self: flex-end;
+}
+svg:hover{
+    transform: rotate(-10deg);
 }

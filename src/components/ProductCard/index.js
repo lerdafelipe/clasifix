@@ -7,7 +7,7 @@ function ProductCard({img, name}) {
     return (
         <div>
             <div className="cards">
-                <img src={img} alt="Product image" />
+                <img src={img} alt="Product" />
                 <h3>{name}</h3>
                 <Counter/>
             </div>
