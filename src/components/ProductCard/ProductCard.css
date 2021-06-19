@@ -1,9 +1,0 @@
-.cards{
-    width: 258px;
-    display: flex;
-    flex-direction: column;
-    margin: 15px;
-}
-.cards h3{
-    font-size: 16px;
-}

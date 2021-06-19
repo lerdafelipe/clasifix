@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import './counter.css'
+import './ItemCount.css'
 
-function Counter() {
-  const [count, setCount] = useState(1);
-  const [stock] = useState(8);
+function ItemCount({stock, onAdd, name}) {
+  let [count, setCount] = useState(1);
 
   const counterUp = ()=>{
     if(count < stock){ setCount(count + 1)}
@@ -11,6 +10,11 @@ function Counter() {
 
   const countDown = ()=>{
     if(count > 1){ setCount(count - 1)}
+  }
+  onAdd = ()=>{
+    if(stock > 1){
+    console.log("Agregaste al carrito ", count," ", name)
+    setCount(count = 1);}
   }
 
   return (
@@ -20,9 +24,11 @@ function Counter() {
           <p>{count}</p>
           <button onClick={countDown}>-</button>
       </div>
+      <button className="onAdd" onClick={onAdd}>Agregar {count} {name}</button>
     </div>
   )
 }
 
-export default Counter;
+
+export default ItemCount;
 

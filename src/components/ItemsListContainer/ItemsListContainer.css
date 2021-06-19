@@ -1,5 +1,6 @@
 .itemsListContainer{
     display: flex;
+    justify-content: space-between;
     max-width: 100vw;
     padding: 0 80px;
     flex-wrap: wrap;

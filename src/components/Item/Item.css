@@ -1,0 +1,21 @@
+.div-cards{
+    flex: 0 0 20%;
+    max-width: 20%;
+    margin: 15px;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddad49;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 px 3px 0 #a4a4a4;
+    background-color: #fff;
+}
+.cards img{
+    border-bottom: 1px solid #ddad49;
+}
+.cards h3{
+    font-size: 16px;
+    margin: 3px 0 10px 5px;
+}
