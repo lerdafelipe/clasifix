@@ -24,7 +24,7 @@ function ItemCount({stock, onAdd, name}) {
           <p>{count}</p>
           <button onClick={countDown}>-</button>
       </div>
-      <button className="onAdd" onClick={onAdd}>Agregar {count} {name}</button>
+      <button className="onAdd" onClick={onAdd}>Agregar</button>
     </div>
   )
 }

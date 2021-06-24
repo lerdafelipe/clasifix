@@ -9,7 +9,7 @@ function ItemDetail({img, name, price, description, stock}) {
         <>
         <div className="details_container">
             <img src={img} alt="product"/>
-            <div>
+            <div className="details">
                 <h3>{name}</h3>
                 <h6>${price}</h6>
                 <p>{description}</p>

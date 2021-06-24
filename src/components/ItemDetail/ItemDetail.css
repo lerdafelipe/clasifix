@@ -1,17 +1,17 @@
 .details_container{
     display: flex;
     flex-direction: row;
-    padding: 0 80px;
+    width: 80%;
+    margin: auto;
+    align-self: center;
+    margin-bottom: 90px;
 }
 
 .details_container img{
     flex: 0 0 50%;
     max-width: 50%;
 }
-.details_container div{
+.details{
     flex: 0 0 50%;
     padding: 0 40px;
-}
-.details_container div button{
-    justify-self: flex-start;
 }

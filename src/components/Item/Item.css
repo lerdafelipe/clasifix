@@ -1,7 +1,6 @@
 .div-cards{
-    flex: 0 0 20%;
-    max-width: 20%;
-    margin: 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
 }
 .cards{
     display: flex;
@@ -11,6 +10,7 @@
     overflow: hidden;
     box-shadow: 0 px 3px 0 #a4a4a4;
     background-color: #fff;
+    margin: 15px;
 }
 .cards img{
     border-bottom: 1px solid #ddad49;
