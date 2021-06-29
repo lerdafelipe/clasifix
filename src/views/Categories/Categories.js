@@ -12,7 +12,7 @@ function Categories({match}) {
         .then((res)=> res.json())
         .then((productos)=> setProductos(productos))
 
-    }, [])
+    }, [match.params.category])
     return (
         <>
         <div className="itemsListContainer">

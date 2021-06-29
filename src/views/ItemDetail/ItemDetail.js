@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import ItemDetail from './../../components/ItemDetail/index';
 
 function ItemDetailContainer({match}) {
-    console.log(match);
     const [productos, setProductos] = useState([]);
 
     useEffect(()=>{
@@ -11,7 +10,7 @@ function ItemDetailContainer({match}) {
         .then((res)=> res.json())
         .then((productos)=> setProductos([productos]))
 
-    },[])
+    },[match.params.id])
     return (
         <>
             {productos.map( producto => <ItemDetail key={producto.id} description={producto.description} price={producto.price} img={producto.image} name={producto.title} stock={producto.stock}/>)}
