@@ -19,7 +19,7 @@ function ItemCount({stock, onAdd, name}) {
     setCantidad(cantidad = count)
     setCount(count = 1);}
     if(cantidad>0){
-      setEndPurchase(!endPurchase)
+      setEndPurchase(endPurchase = true)
     }
   }
 

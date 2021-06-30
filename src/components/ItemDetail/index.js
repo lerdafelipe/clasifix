@@ -14,6 +14,7 @@ function ItemDetail({img, name, price, description, stock}) {
                 <h3>{name}</h3>
                 <h6>${price}</h6>
                 <p>{description}</p>
+                <p>Cantidad disponibles: {stock}</p>
                 <ItemCount stock={stock} name={name}/>
             </div>
         </div>
