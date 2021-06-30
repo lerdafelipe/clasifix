@@ -5,6 +5,7 @@ import ItemCount from './../ItemCount/index'
 import img from './../../card-img.png'
 
 function ItemDetail({img, name, price, description, stock}) {
+
     return (
         <>
         <div className="details_container">
@@ -13,7 +14,7 @@ function ItemDetail({img, name, price, description, stock}) {
                 <h3>{name}</h3>
                 <h6>${price}</h6>
                 <p>{description}</p>
-                <ItemCount name={name} stock={stock}/>
+                <ItemCount stock={stock} name={name}/>
             </div>
         </div>
         </>
@@ -21,7 +22,7 @@ function ItemDetail({img, name, price, description, stock}) {
 }
 
 ItemDetail.defaultProps = {
-    stock: 5,
+    stock: 0,
     img: img,
     price: 257
 }

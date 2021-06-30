@@ -10,11 +10,8 @@
     margin-bottom: 0;
 }
 .counter-container p{
-    min-width: 79.5%;
     text-align: center;
     margin: auto;
-    border-top: 1px solid #354a67;
-    border-bottom: 1px solid #354a67;
     color: #354a67;
 }
 .counter-container button{
