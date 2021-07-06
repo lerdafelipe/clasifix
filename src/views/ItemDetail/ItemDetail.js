@@ -16,7 +16,7 @@ function ItemDetailContainer({match}) {
     },[product])
     return (
         <>
-            {productos.map( producto => <ItemDetail key={producto.id} description={producto.description} price={producto.price} img={producto.image} name={producto.title} stock={producto.stock}/>)}
+            {productos.map( producto => <ItemDetail key={product} producto={producto}/>)}
         </>
     )
 }

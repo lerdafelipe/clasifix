@@ -1,0 +1,41 @@
+.container{
+    padding: 0 80px;
+}
+table{
+    width: 100%;
+}
+td{
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    margin: 0;
+    padding: 5px;
+}
+tr{
+    margin: 0;
+    padding: 0;
+}
+th{
+    text-align: start;
+}
+h5{
+    text-align: end;
+    margin-right: 75px;
+}
+.cart-Trash{
+    border: none;
+    margin: 0;
+    padding: 5px;
+}
+.clear-cart{
+    font-weight: 600;
+    margin-left:85%;
+    padding: 8px;
+    background-color: #354a67;
+    color: #ddad49;
+    border: 1px solid #ddad49;
+    border-radius: 5px;
+}
+td:last-child{
+    padding: 0;
+    border: none;
+}

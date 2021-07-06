@@ -1,11 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import './ItemCount.css'
+import {CartContext} from './../../CartContext'
 
-function ItemCount({stock, onAdd, name}) {
+
+function ItemCount({stock, onAdd, item}) {
   let [count, setCount] = useState(1);
   let [cantidad, setCantidad] = useState(0)
   let [endPurchase, setEndPurchase] = useState(false)
+
+  const myContext = useContext(CartContext);
 
   const counterUp = ()=>{
     if(count < stock){ setCount(count + 1)}
@@ -17,8 +21,9 @@ function ItemCount({stock, onAdd, name}) {
   onAdd = ()=>{
     if(stock > 0){
     setCantidad(cantidad = count)
+    myContext.addItem(item, cantidad);
     setCount(count = 1);}
-    if(cantidad>0){
+    if(cantidad>0){  
       setEndPurchase(endPurchase = true)
     }
   }

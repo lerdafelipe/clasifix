@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './CartWidget.css';
 import {GrCart} from 'react-icons/gr';
+import { CartContext } from '../../CartContext';
 
 function CartWidget() {
-    return <GrCart/>
+    const {cartNumber} = useContext(CartContext);
+    return (
+    <>
+    <span className="cart-widget"><GrCart/><p>{cartNumber()}</p></span>
+    </>)
 }
 
 export default CartWidget;

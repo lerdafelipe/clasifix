@@ -15,7 +15,7 @@ function ItemList() {
     }, [])
     return (
         <>
-            {productos.map( producto => <Link key={producto.id} className="LinkCard" to={`/detail/${producto.id}`}><Item img={producto.image} name={producto.title} stock={producto.stock}/></Link>)}
+            {productos.map( producto => <div key={producto.id} className="div-cards"><Link className="LinkCard" to={`/detail/${producto.id}`}><Item img={producto.image} name={producto.title} price={producto.price}/></Link></div>)}
         </>
     )
 }

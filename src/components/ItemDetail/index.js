@@ -4,18 +4,20 @@ import './ItemDetail.css'
 import ItemCount from './../ItemCount/index'
 import img from './../../card-img.png'
 
-function ItemDetail({img, name, price, description, stock}) {
+function ItemDetail({producto}) {
 
     return (
         <>
         <div className="details_container">
-            <img src={img} alt="product"/>
+            <div className="details-img">
+                <img src={producto.image} alt="product"/>
+            </div>
             <div className="details">
-                <h3>{name}</h3>
-                <h6>${price}</h6>
-                <p>{description}</p>
-                <p>Cantidad disponibles: {stock}</p>
-                <ItemCount stock={stock} name={name}/>
+                <h3>{producto.title}</h3>
+                <h5>${producto.price}</h5>
+                <p>{producto.description}</p>
+                <p>Cantidad disponibles: {producto.stock}</p>
+                <ItemCount stock={producto.stock} item={producto}/>
             </div>
         </div>
         </>
@@ -24,8 +26,7 @@ function ItemDetail({img, name, price, description, stock}) {
 
 ItemDetail.defaultProps = {
     stock: 0,
-    img: img,
-    price: 257
+    img: img
 }
 
 export default ItemDetail
