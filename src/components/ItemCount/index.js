@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import './ItemCount.css'
-import {CartContext} from './../../CartContext'
+import {CartContext} from './../../Context/CartContext'
 
 
 function ItemCount({stock, onAdd, item}) {

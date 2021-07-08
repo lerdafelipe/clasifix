@@ -1,22 +1,31 @@
 import React, {useEffect, useState} from 'react';
 import ItemDetail from './../../components/ItemDetail/index';
+import { db } from './../../firebase/firebase'
 
 function ItemDetailContainer({match}) {
     const [productos, setProductos] = useState([]);
     let productId= match.params.id;
-    let product = productId - 1;
+
+    const getProducts = ()=>{
+        db.collection('productos').onSnapshot((querySnapshot)=>{
+            const docs = [];
+
+            querySnapshot.forEach((doc)=>{
+                docs.push({...doc.data(), id: doc.id});
+                console.log(docs);
+            })
+            const productoElegido = docs.find(producto => producto.id === productId)
+            setProductos([productoElegido]);
+        })
+    }
 
     useEffect(()=>{
-        fetch(`https://mocki.io/v1/7a65d367-1bb9-4027-837f-e687fc72f754`)
-        
-        .then((res)=> res.json())
-        .then((prd)=> prd[product])
-        .then((productos)=> setProductos([productos]))
-
-    },[product])
+        getProducts();
+    },[productId]);
+    
     return (
         <>
-            {productos.map( producto => <ItemDetail key={product} producto={producto}/>)}
+            {productos.map( producto => <ItemDetail key={productId} producto={producto}/>)}
         </>
     )
 }

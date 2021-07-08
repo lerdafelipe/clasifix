@@ -5,7 +5,7 @@ function ItemCart({item, unitary, remove}) {
     return (
         <>
             <tr>
-                <td>{item.item.title}</td>
+                <td>{item.item.name}</td>
                 <td>{item.cantidad}</td>
                 <td>{item.item.price}</td>
                 <td>${unitary}</td>
