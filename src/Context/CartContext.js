@@ -10,9 +10,7 @@ export function CartProvider({defaultValue = [], children}) {
         setCartItems (CartItems.filter(({item})=> item.id !== id));
     }
 
-    const cartNumber = () =>{
-        return CartItems.length;
-    }
+    const cartNumber = CartItems.reduce((totalNumber, item)=>{return item.cantidad + totalNumber}, 0)
 
     const addItem = (item, cantidad)=>{
         let repetitive = [];
