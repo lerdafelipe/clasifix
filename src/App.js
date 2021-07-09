@@ -2,8 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { CartProvider } from './Context/CartContext';
 import './App.css';
-//Components
-import Header from './components/Header/index'
+import Header from './components/Header/index';
 import Home from './views/Home/Home';
 import Cart from './views/cart/Cart';
 import Categories from './views/Categories/Categories';
@@ -25,7 +24,7 @@ function App() {
           </Router>
         </CartProvider>
       </>
-  )
+  );
 }
 
 export default App;

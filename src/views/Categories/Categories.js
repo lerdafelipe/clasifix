@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import Item from './../../components/Item/index';
-import {Link} from 'react-router-dom'
-import './Categories.css'
-import {db} from './../../firebase/firebase'
+import {Link} from 'react-router-dom';
+import './Categories.css';
+import {db} from './../../firebase/firebase';
 
 function Categories({match}) {
     const [productos, setProductos] = useState([]);
+
     let categoriaElegida = match.params.category;
 
     const getProducts = ()=>{
@@ -15,8 +16,10 @@ function Categories({match}) {
             querySnapshot.forEach((doc)=>{
                 docs.push({...doc.data(), id: doc.id});
                 console.log(docs);
-            })
+            });
+
             const productosCategoria = docs.filter(producto => producto.category === categoriaElegida)
+
             setProductos(productosCategoria);
         })
     }
@@ -28,10 +31,18 @@ function Categories({match}) {
     return (
         <>
         <div className="itemsListContainer">
-            {productos.map( producto => <Link key={producto.id} className="LinkCard" to={`/detail/${producto.id}`}><Item price={producto.price} img={producto.img} name={producto.name} stock={producto.stock}/></Link>)}
+            {productos.map( (producto) =>{
+                return (<Link   key={producto.id} className="LinkCard" to={`/detail/${producto.id}`}>
+                            <Item price={producto.price} 
+                                img={producto.img} 
+                                name={producto.name} 
+                                stock={producto.stock}/>
+                        </Link>);
+                    }
+            )}
         </div>
         </>
-    )
+    );
 }
 
 export default Categories;

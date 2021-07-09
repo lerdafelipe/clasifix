@@ -9,7 +9,11 @@ function ItemCart({item, unitary, remove}) {
                 <td>{item.cantidad}</td>
                 <td>{item.item.price}</td>
                 <td>${unitary}</td>
-                <td><button onClick={remove}><GrTrash className="cart-Trash"/></button></td>
+                <td>
+                    <button onClick={remove}>
+                        <GrTrash className="cart-Trash"/>
+                    </button>
+                </td>
             </tr>
         </>
     )

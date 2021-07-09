@@ -15,6 +15,7 @@ function ItemList() {
                 docs.push({...doc.data(), id: doc.id});
                 console.log(docs);
             })
+
             setProductos(docs);
         })
     }
@@ -26,7 +27,13 @@ function ItemList() {
 
     return (
         <>
-            {productos.map( producto => <div key={producto.id} className="div-cards"><Link className="LinkCard" to={`/detail/${producto.id}`}><Item img={producto.img} name={producto.name} price={producto.price}/></Link></div>)}
+            {productos.map( (producto) => { 
+                                return (<div key={producto.id} className="div-cards">
+                                            <Link className="LinkCard" to={`/detail/${producto.id}`}>
+                                                <Item img={producto.img} name={producto.name} price={producto.price}/>
+                                            </Link>
+                                        </div>)}
+                            )}
         </>
     )
 }

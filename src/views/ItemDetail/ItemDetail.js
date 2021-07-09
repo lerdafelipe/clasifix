@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ItemDetail from './../../components/ItemDetail/index';
-import { db } from './../../firebase/firebase'
+import { db } from './../../firebase/firebase';
 
 function ItemDetailContainer({match}) {
     const [productos, setProductos] = useState([]);
@@ -14,7 +14,7 @@ function ItemDetailContainer({match}) {
                 docs.push({...doc.data(), id: doc.id});
                 console.log(docs);
             })
-            const productoElegido = docs.find(producto => producto.id === productId)
+            const productoElegido = docs.find(producto => producto.id === productId);
             setProductos([productoElegido]);
         })
     }
@@ -25,9 +25,12 @@ function ItemDetailContainer({match}) {
     
     return (
         <>
-            {productos.map( producto => <ItemDetail key={productId} producto={producto}/>)}
+            {productos.map( (producto) =>{
+                return(<ItemDetail key={productId} producto={producto}/>);
+                }
+            )}
         </>
-    )
+    );
 }
 
 export default ItemDetailContainer;
