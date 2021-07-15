@@ -1,37 +1,52 @@
-.LinkCard{
-    flex: 0 0 100%;
-    max-width: 100%;
+.LinkCard {
+  flex: 0 0 100%;
+  max-width: 100%;
 }
-.LinkCard h3{
-    text-decoration: none;
+.LinkCard h3 {
+  text-decoration: none;
 }
-.div-cards{
-    flex: 0 0 25%;
-    max-width: 25%;
+.div-cards {
+  flex: 0 0 25%;
+  max-width: 25%;
 }
 
-
-
-@media screen and (max-width:1075px) {
-    .div-cards{
-        flex: 0 0 33.33%;
-        max-width: 33.33%;
-    }
-    .itemsListContainer{
-        padding: 0 50px;
-    }
+@media screen and (max-width: 1075px) {
+  .div-cards {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+  .itemsListContainer {
+    padding: 0 50px;
+  }
 }
-@media screen and (max-width:750px) {
-    .itemsListContainer{
-        padding: 0 35px;
-    }
+@media screen and (max-width: 750px) {
+  .itemsListContainer {
+    padding: 0 35px;
+  }
 }
-@media screen and (max-width:660px) {
-    .div-cards{
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
-    .itemsListContainer{
-        padding: 0 10px;
-    }
+@media screen and (max-width: 660px) {
+  .div-cards {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .itemsListContainer {
+    padding: 0 10px;
+  }
+}
+.Loader {
+  height: 30px;
+  width: 30px;
+  margin: auto;
+  border: 2px solid #585858;
+  border-top: 2px solid #cfcfcf;
+  border-radius: 50%;
+  animation: spin 0.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

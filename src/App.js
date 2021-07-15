@@ -5,8 +5,10 @@ import './App.css';
 import Header from './components/Header/index';
 import Home from './views/Home/Home';
 import Cart from './views/cart/Cart';
+import Order from './views/Order/Order';
 import Categories from './views/Categories/Categories';
 import ItemDetailContainer from './views/ItemDetail/ItemDetail';
+import Footer from './components/Footer/index'
 
 
 function App() {
@@ -20,7 +22,9 @@ function App() {
               <Route path="/Cart" component={Cart}/>
               <Route path="/detail/:id" component={ItemDetailContainer}/>
               <Route path="/category/:category" component={Categories}/>
+              <Route path="/Order" component={Order}/>
             </Switch>
+            <Footer/>
           </Router>
         </CartProvider>
       </>

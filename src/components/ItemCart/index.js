@@ -7,7 +7,6 @@ function ItemCart({item, unitary, remove}) {
             <tr>
                 <td>{item.item.name}</td>
                 <td>{item.cantidad}</td>
-                <td>{item.item.price}</td>
                 <td>${unitary}</td>
                 <td>
                     <button onClick={remove}>

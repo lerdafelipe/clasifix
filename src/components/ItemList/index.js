@@ -6,6 +6,7 @@ import { db } from '../../firebase/firebase';
 
 function ItemList() {
     const [productos, setProductos] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const getProducts = ()=>{
         db.collection('productos').onSnapshot((querySnapshot)=>{
@@ -13,10 +14,10 @@ function ItemList() {
 
             querySnapshot.forEach((doc)=>{
                 docs.push({...doc.data(), id: doc.id});
-                console.log(docs);
             })
 
             setProductos(docs);
+            setIsLoading(!isLoading);
         })
     }
 
@@ -27,6 +28,7 @@ function ItemList() {
 
     return (
         <>
+            {isLoading ? (<div className="Loader"></div>) : null}
             {productos.map( (producto) => { 
                                 return (<div key={producto.id} className="div-cards">
                                             <Link className="LinkCard" to={`/detail/${producto.id}`}>

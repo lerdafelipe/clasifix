@@ -6,6 +6,7 @@ import {db} from './../../firebase/firebase';
 
 function Categories({match}) {
     const [productos, setProductos] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     let categoriaElegida = match.params.category;
 
@@ -15,29 +16,34 @@ function Categories({match}) {
 
             querySnapshot.forEach((doc)=>{
                 docs.push({...doc.data(), id: doc.id});
-                console.log(docs);
             });
 
             const productosCategoria = docs.filter(producto => producto.category === categoriaElegida)
 
             setProductos(productosCategoria);
+            setIsLoading(false);
         })
     }
 
     useEffect(()=>{
+        setIsLoading(true);
         getProducts();
     }, [match.params.category]);
 
     return (
-        <>
+        <>   
+        <h3 className="title-category">{categoriaElegida}</h3>
+        {isLoading ? (<div className="Loader"></div>) : null}
         <div className="itemsListContainer">
             {productos.map( (producto) =>{
-                return (<Link   key={producto.id} className="LinkCard" to={`/detail/${producto.id}`}>
-                            <Item price={producto.price} 
-                                img={producto.img} 
-                                name={producto.name} 
-                                stock={producto.stock}/>
-                        </Link>);
+                return (<div  key={producto.id} className="div-cards">
+                            <Link className="LinkCard" to={`/detail/${producto.id}`}>
+                                <Item price={producto.price} 
+                                    img={producto.img} 
+                                    name={producto.name} 
+                                    stock={producto.stock}/>
+                            </Link>
+                        </div>)
                     }
             )}
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import './ItemDetail.css'
 //Components
 import ItemCount from './../ItemCount/index'
-import img from './../../card-img.png'
+import img from './card-img.png'
 
 function ItemDetail({producto}) {
 

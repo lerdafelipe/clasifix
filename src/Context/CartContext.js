@@ -5,14 +5,18 @@ export const CartContext = createContext();
 
 export function CartProvider({defaultValue = [], children}) {
     const [CartItems, setCartItems] = useState(defaultValue);
+    const [Client, setClient] = useState({});
+
 
     const removeItem = (id)=>{
         setCartItems (CartItems.filter(({item})=> item.id !== id));
     }
 
+
     const cartNumber = CartItems.reduce((totalNumber, item)=>{
         return item.cantidad + totalNumber
     }, 0)
+
 
     const addItem = (item, cantidad)=>{
         let repetitive = [];
@@ -31,19 +35,26 @@ export function CartProvider({defaultValue = [], children}) {
         }
     };
 
+
    const totalProduct = (item)=>{
        return item.item.price * item.cantidad;
    }
 
+
    const total = CartItems.reduce((totalPrice, item)=>{
         return (item.item.price * item.cantidad) + totalPrice;
     }, 0)
+    
 
 
    const clearCart = ()=>{
     setCartItems([]);
     }
+
+    const addClient = (newClient)=>{
+        setClient(newClient);
+    }
     
 
-    return <CartContext.Provider value={{CartItems, addItem, removeItem, clearCart, totalProduct, total, cartNumber}}>{children}</CartContext.Provider>
+    return <CartContext.Provider value={{CartItems, addItem, removeItem, clearCart, totalProduct, total, cartNumber, Client, addClient}}>{children}</CartContext.Provider>
 }

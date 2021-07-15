@@ -1,41 +1,110 @@
-.container{
-    padding: 0 80px;
+.container {
+  padding: 0 80px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-table{
-    width: 100%;
+.cart-container {
+  flex: 0 0 50%;
+  max-width: 50%;
 }
-td{
-    border-top: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
-    margin: 0;
-    padding: 5px;
+table {
+  width: 100%;
+  border-spacing: 0;
 }
-tr{
-    margin: 0;
-    padding: 0;
+td {
+  text-align: center;
+  border-top: 1px solid #354a67;
+  border-left: 1px solid #354a67;
+  margin: 0;
+  padding: 5px;
 }
-th{
-    text-align: start;
+td:first-child {
+  text-align: start;
 }
-h5{
-    text-align: end;
-    margin-right: 75px;
+td:last-child {
+  text-align: start;
 }
-.cart-Trash{
-    border: none;
-    margin: 0;
-    padding: 5px;
+tr {
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
-.clear-cart{
-    font-weight: 600;
-    margin-left:85%;
-    padding: 8px;
-    background-color: #354a67;
-    color: #ddad49;
-    border: 1px solid #ddad49;
-    border-radius: 5px;
+th {
+  text-align: center;
 }
-td:last-child{
-    padding: 0;
-    border: none;
+th:first-child {
+  text-align: start;
+}
+h5 {
+  margin-top: 0;
+  text-align: end;
+  margin-right: 85px;
+}
+.cart-Trash {
+  border: none;
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+}
+.cart-container_Button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.clear-cart {
+  font-weight: 500;
+  padding: 8px;
+  margin-right: 75px;
+  background-color: rgb(236, 78, 78);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  box-shadow: rgb(0 0 0 / 15%) 0px 10px 15px -3px,
+    rgb(0 0 0 / 15%) 0px 4px 6px -2px;
+}
+td:last-child {
+  padding: 0;
+  border: none;
+}
+.no-found_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.no-found_container p {
+  margin-top: 0px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+.no-found_container img {
+  max-width: 600px;
+}
+th {
+  border-left: 1px solid #354a67;
+}
+tr:last-child td {
+  border-bottom: 1px solid #354a67;
+}
+tr:last-child td:last-child {
+  border-bottom: none;
+}
+@media screen and (max-width: 845px) {
+  .cart-container {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container {
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
 }

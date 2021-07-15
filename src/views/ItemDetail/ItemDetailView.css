@@ -1,13 +1,3 @@
-.LinkCard {
-  flex: 0 0 25%;
-  max-width: 25%;
-}
-.LinkCard h3 {
-  text-decoration: none;
-}
-.title-category {
-  margin-left: 80px;
-}
 .Loader {
   height: 30px;
   width: 30px;

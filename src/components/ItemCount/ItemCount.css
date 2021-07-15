@@ -1,45 +1,70 @@
-.counter-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    color: whitesmoke;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 0;
+.counter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  color: whitesmoke;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 20px;
+  border: 1px solid #354a67;
+  border-radius: 3px;
 }
-.counter-container p{
-    text-align: center;
-    margin: auto;
-    color: #354a67;
+.counter-container p {
+  text-align: center;
+  margin: auto;
+  color: #354a67;
+  font-size: 20px;
+  font-weight: 600;
 }
-.counter-container button{
-    border: 1px solid #354a67;
-    margin: 0;
-    padding: 0px 7px;
-    cursor: pointer;
-    font-size: 18px;
+.counter-container button {
+  border: none;
+  margin: 0;
+  padding: 0px 7px;
+  cursor: pointer;
+  font-size: 22px;
 }
-.counter-container button:nth-child(1){
-    background-color: #354a67;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
-    color: #f4f4f4;
+.counter-container button:nth-child(1) {
+  background-color: transparent;
+  border-right: 1px solid #354a67;
+  color: #354a67;
 }
-.counter-container button:nth-child(3){
-    background-color: #354a67;
-    border-bottom-right-radius: 3px;
-    border-top-right-radius: 3px;
-    color: #f4f4f4;
+.counter-container button:nth-child(3) {
+  background-color: transparent;
+  border-left: 1px solid #354a67;
+  color: #354a67;
+  padding-left: 9.26px;
+  padding-right: 9.26px;
 }
-.onAdd{
-    width: 100%;
-    color: #ddad49;
-    border:0;
-    margin: 0;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #fff;
+.onAdd {
+  width: 100%;
+  color: #ddad49;
+  margin-top: 5px;
+  padding: 4px;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid #ddad49;
+  cursor: pointer;
+  background-color: transparent;
+}
+.onAdd:hover {
+  color: #354a67;
+  border: 1px solid #354a67;
+  background-color: #ddad49;
+}
+.endPurchase {
+  margin-top: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(49, 151, 149);
+  color: rgb(255, 255, 255);
+  padding: 3px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 3px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 10px 15px -3px,
+    rgb(0 0 0 / 5%) 0px 4px 6px -2px;
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Item.css'
 //components
-import img from './../../card-img.png'
+import img from './card-img.png'
 
 function Item({img, name, price}) {
     return (
