@@ -1,13 +1,16 @@
-import React, {useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import './FormDelivery.css';
 import {useFormik} from 'formik';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 import {CartContext} from '../../Context/CartContext'
+import { db } from '../../firebase/firebase';
 
 
 function FormDelivery() {
-    const {addClient} = useContext(CartContext);
+    const [isLoading, setIsLoading] = useState(false);
+    const [sendOrder, setSendOrder] = useState(false);
+    const {CartItems, total, newIdCompra, clearCart} = useContext(CartContext);
 
     const formik = useFormik({
         initialValues:{
@@ -25,7 +28,13 @@ function FormDelivery() {
             adress: Yup.string().required('Necesitamos tu dirección para el delivery')
         }),
         onSubmit: (clientData)=>{
-            addClient(clientData);
+            setIsLoading(true);
+            const order = {'Orden': CartItems, 'Cliente': clientData, 'Total': total};
+            const ordenes = db.collection('orders');
+            ordenes.add(order).then(({id})=>{newIdCompra(id)});
+            setIsLoading(false);
+            setSendOrder(true);
+            setTimeout(clearCart, 10000)
         }
     })
 
@@ -79,11 +88,16 @@ function FormDelivery() {
                     />
                 </div>
                 <div className="form-container_Button">
-                    <Link to="/Order">
-                        <button type="submit" >
-                            Finalizar Compra
-                        </button>
-                    </Link>
+                    {isLoading ? (<div className="Loader"></div>) : null}
+
+                    {sendOrder ? (<><div className="button-viewOrder">
+                                        <p>¡Orden Enviada!</p> 
+                                        <Link to="/Order">
+                                            <span>Ver Detalles</span>
+                                        </Link></div></>)
+                                :(<button type="submit" >
+                                    Finalizar Compra
+                                </button>)}
                 </div>
             </form>
         </div>

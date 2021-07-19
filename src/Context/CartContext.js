@@ -5,7 +5,7 @@ export const CartContext = createContext();
 
 export function CartProvider({defaultValue = [], children}) {
     const [CartItems, setCartItems] = useState(defaultValue);
-    const [Client, setClient] = useState({});
+    const [idCompra, setIdCompra] = useState('');
 
 
     const removeItem = (id)=>{
@@ -51,10 +51,10 @@ export function CartProvider({defaultValue = [], children}) {
     setCartItems([]);
     }
 
-    const addClient = (newClient)=>{
-        setClient(newClient);
+    const newIdCompra = (id)=>{
+        setIdCompra(id);
     }
     
 
-    return <CartContext.Provider value={{CartItems, addItem, removeItem, clearCart, totalProduct, total, cartNumber, Client, addClient}}>{children}</CartContext.Provider>
+    return <CartContext.Provider value={{CartItems, addItem, removeItem, clearCart, totalProduct, total, cartNumber, idCompra, newIdCompra}}>{children}</CartContext.Provider>
 }

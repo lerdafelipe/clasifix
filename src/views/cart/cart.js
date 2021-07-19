@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import { CartContext } from '../../Context/CartContext';
 import './Cart.css';
 import ItemCart from '../../components/ItemCart';
-import noresults from './img.svg'
+import noresults from './img.svg';
 import FormDelivery from '../../components/FormDelivery';
 
 
