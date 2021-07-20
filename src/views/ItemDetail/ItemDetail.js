@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import ItemDetail from './../../components/ItemDetail/index';
 import './ItemDetailView.css'
+import productNoFound from './product-nofound.svg'
 import { db } from './../../firebase/firebase';
 
 function ItemDetailContainer({match}) {
@@ -16,15 +17,26 @@ function ItemDetailContainer({match}) {
                 docs.push({...doc.data(), id: doc.id});
             })
             const productoElegido = docs.find(producto => producto.id === productId);
-            setProductos([productoElegido]);
-            setIsLoading(false);
+            if(productoElegido !== undefined){
+                setProductos([productoElegido]);
+                setIsLoading(false);
+            }
         })
     }
 
     useEffect(()=>{
         setIsLoading(true);
         getProducts();
-    },[productId]);
+    },[]);
+
+    if(productos.length === 0){
+        return <>
+                <div className="product-nofound">
+                    <h4>Ups! Este producto no existe</h4>
+                    <img className="img-nofound" src={productNoFound} alt="Producto no encontrado"/>
+                </div>
+        </>
+    }
     
     return (
         <>

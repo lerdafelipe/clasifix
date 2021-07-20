@@ -31,7 +31,7 @@ function FormDelivery() {
             const ordenes = db.collection('orders');
             ordenes.add(order).then(({id})=>{newIdCompra(id)});
             setSendOrder(true);
-            setTimeout(clearCart, 10000)
+            setTimeout(clearCart, 12000);
         }
     })
 
@@ -86,14 +86,14 @@ function FormDelivery() {
                 </div>
                 <div className="form-container_Button">
 
-                    {sendOrder ? (<><div className="button-viewOrder">
-                                        <p>¡Orden Enviada!</p> 
-                                        <Link to="/Order">
-                                            <span>Ver Detalles</span>
-                                        </Link></div></>)
-                                :(<button type="submit" >
-                                    Finalizar Compra
-                                </button>)}
+                {sendOrder ? (<><div className="button-viewOrder">
+                                    <p>¡Orden Enviada!</p> 
+                                    <Link to="/Order">
+                                        <span>Ver Detalles</span>
+                                    </Link></div></>)
+                            :(<button type="submit" >
+                                Finalizar Compra
+                            </button>)}
                 </div>
             </form>
         </div>
