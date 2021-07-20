@@ -19,7 +19,7 @@ function Order() {
             setOrder([docs[indexCompra]]);
             if(indexCompra !== -1){
                 setIsLoading(false)
-            }   
+            }
         })
     }
 
@@ -37,7 +37,7 @@ function Order() {
                     <div className="OrderId"><h2>Orden:  <span>{idCompra}</span></h2></div>
                 </div>
                 {(order[0].Orden).map( (Item) =>{
-                    return(<><ul key={Item.item.name}>
+                    return(<><ul key={Item.item.id}>
                                 <li>
                                     <div>
                                         <span>{Item.item.name}</span>
@@ -57,7 +57,8 @@ function Order() {
                             </div>
                            </>);
                         }
-                    )}</>)}
+                )}</>
+            )}
            
         </>
     )

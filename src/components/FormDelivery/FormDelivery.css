@@ -101,7 +101,13 @@
   cursor: pointer;
 }
 .button-viewOrder p {
-  font-size: 15;
+  font-size: 15px;
   font-weight: 500;
   margin-right: 10px;
+  color: black;
+}
+.form-container p {
+  font-size: 12px;
+  font-weight: 500;
+  color: red;
 }

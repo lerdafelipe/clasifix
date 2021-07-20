@@ -79,6 +79,7 @@ td:last-child {
   text-align: center;
   font-size: 30px;
   font-weight: 600;
+  color: rgb(12, 0, 49);
 }
 .no-found_container img {
   max-width: 600px;

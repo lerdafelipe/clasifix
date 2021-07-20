@@ -8,7 +8,6 @@ import { db } from '../../firebase/firebase';
 
 
 function FormDelivery() {
-    const [isLoading, setIsLoading] = useState(false);
     const [sendOrder, setSendOrder] = useState(false);
     const {CartItems, total, newIdCompra, clearCart} = useContext(CartContext);
 
@@ -24,15 +23,13 @@ function FormDelivery() {
             name: Yup.string().required('El Nombre es obligatorio'),
             lastname: Yup.string().required('El Apellido es obligatorio'),
             email: Yup.string().email('El email no es válido').required('El email es obligatorio'),
-            phone: Yup.number().min(6, 'Tu número de teléfono es incorrecto').required('Tu teléfono es obligatorio'),
+            phone: Yup.number('El teléfono debe ser un númerod').min(6, 'Tu número de teléfono es incorrecto').required('Tu teléfono es obligatorio'),
             adress: Yup.string().required('Necesitamos tu dirección para el delivery')
         }),
         onSubmit: (clientData)=>{
-            setIsLoading(true);
             const order = {'Orden': CartItems, 'Cliente': clientData, 'Total': total};
             const ordenes = db.collection('orders');
             ordenes.add(order).then(({id})=>{newIdCompra(id)});
-            setIsLoading(false);
             setSendOrder(true);
             setTimeout(clearCart, 10000)
         }
@@ -48,8 +45,8 @@ function FormDelivery() {
                         name="name"
                         placeholder="Nombre"
                         onChange={formik.handleChange}
-                        error={formik.errors.name}
                     />
+                    <p>{formik.errors.name}</p>
                 </div>
                 <div className="w-50">
                     <input
@@ -57,8 +54,8 @@ function FormDelivery() {
                         name="lastname"
                         placeholder="Apellido"
                         onChange={formik.handleChange}
-                        error={formik.errors.lastname}
                     />
+                    <p>{formik.errors.lastname}</p>
                 </div>
                 <div className="w-100">
                     <input
@@ -66,8 +63,8 @@ function FormDelivery() {
                         name="email"
                         placeholder="E-mail"
                         onChange={formik.handleChange}
-                        error={formik.errors.email}
                     />
+                    <p>{formik.errors.email}</p>
                 </div>
                 <div className="w-100">
                     <input
@@ -75,8 +72,8 @@ function FormDelivery() {
                         name="phone"
                         placeholder="Teléfono"
                         onChange={formik.handleChange}
-                        error={formik.errors.phone}
                     />
+                    <p>{formik.errors.phone}</p>
                 </div>
                 <div className="w-100">
                     <input
@@ -84,11 +81,10 @@ function FormDelivery() {
                         name="adress"
                         placeholder="Dirección"
                         onChange={formik.handleChange}
-                        error={formik.errors.adress}
                     />
+                    <p>{formik.errors.adress}</p>
                 </div>
                 <div className="form-container_Button">
-                    {isLoading ? (<div className="Loader"></div>) : null}
 
                     {sendOrder ? (<><div className="button-viewOrder">
                                         <p>¡Orden Enviada!</p> 

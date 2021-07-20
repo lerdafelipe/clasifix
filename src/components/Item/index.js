@@ -2,6 +2,7 @@ import React from 'react'
 import './Item.css'
 //components
 import img from './card-img.png'
+import PropTypes from 'prop-types'
 
 function Item({img, name, price}) {
     return (
@@ -21,8 +22,13 @@ function Item({img, name, price}) {
 }
 
 Item.defaultProps = {
-    stock: 5,
     img: img
 }
+
+Item.propTypes= {
+    name: PropTypes.string,
+    img: PropTypes.string,
+    price: PropTypes.number
+};
 
 export default Item;

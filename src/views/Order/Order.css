@@ -27,7 +27,7 @@ ul li {
   display: flex;
   justify-content: space-between;
   border: 1px solid #354a67;
-  min-width: 320px;
+  min-width: 300px;
   padding: 10px 0 0 10px;
 }
 ul li img {
@@ -35,7 +35,7 @@ ul li img {
   width: 56px;
   object-fit: cover;
   border-radius: 50%;
-  margin-top: 5px;
+  margin-top: 0px;
   margin-right: 15px;
 }
 h6 {
@@ -46,7 +46,14 @@ h6 {
 .delivery-details p {
   text-align: center;
   margin-top: -8px;
+  font-size: 15px;
+  color: black;
 }
 .delivery-details {
   margin-bottom: 35px;
+}
+p {
+  font-size: 13px;
+  font-weight: 500;
+  color: black;
 }
