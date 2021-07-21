@@ -1,5 +1,5 @@
-import firebase from "firebase/app"
-import 'firebase/firestore'
+import firebase from "firebase/app";
+import 'firebase/firestore';
 
 
 var firebaseConfig = {
@@ -10,7 +10,7 @@ var firebaseConfig = {
     messagingSenderId: `${process.env.REACT_APP_MESSAGING_SENDER_ID}`,
     appId: `${process.env.REACT_APP_APP_ID}`
   };
-  // Initialize Firebase
+// Initialize Firebase
 const fb =  firebase.initializeApp(firebaseConfig);
-
+//export the firestore from firebase
 export const db = fb.firestore();

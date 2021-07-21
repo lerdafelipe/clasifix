@@ -1,31 +1,48 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext } from 'react';
+//Router
 import { Link } from 'react-router-dom';
-import './ItemCount.css'
-import {CartContext} from './../../Context/CartContext'
+//Styles
+import './ItemCount.css';
+//Import the context
+import {CartContext} from './../../Context/CartContext';
 
 
 function ItemCount({stock, onAdd, item}) {
-  let [count, setCount] = useState(1);
-  let [cantidad, setCantidad] = useState(0)
-  let [endPurchase, setEndPurchase] = useState(false)
+  //Counter
+  const [count, setCount] = useState(1);
+  //Quantity of products to buy
+  let [cantidad, setCantidad] = useState(0);
+  //Show the router to Cart
+  const [endPurchase, setEndPurchase] = useState(false);
 
+  //Declaring my context to send it info
   const myContext = useContext(CartContext);
 
+  //Function increment the counter
   const counterUp = ()=>{
-    if(count < stock){ setCount(count + 1)}
+    if(count < stock){ setCount(count + 1);}
   }
 
+  //Function decrement the counter
   const countDown = ()=>{
-    if(count > 1){ setCount(count - 1)}
+    if(count > 1){ setCount(count - 1);}
   }
+
+  //Adding the product to the cart with a quatity
   onAdd = ()=>{
     if(stock > 0){
-    setCantidad(cantidad = count)
-    myContext.addItem(item, cantidad);
-    setCount(count = 1);}
-    if(cantidad>0){  
-      setEndPurchase(endPurchase = true)
+      //Changing the quantity 'Cantidad'
+      setCantidad(cantidad= count);
+      //Sending product to cartContext
+      myContext.addItem(item, cantidad);
+      //restarting counter
+      setCount(1);
     }
+
+    //When the 'Cantidad' change, show the router to cart
+      if(cantidad>0){  
+        setEndPurchase(true);
+      }
   }
 
   return (
@@ -40,7 +57,7 @@ function ItemCount({stock, onAdd, item}) {
         (<Link className="endPurchase" to="/Cart">¡Finalizar compra!</Link>)
         : (<></>)}
     </div>
-  )
+  );
 }
 
 

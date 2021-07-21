@@ -1,6 +1,8 @@
-import React from 'react'
-import './Main.css'
-import NavBar from '../NavBar/index'
+import React from 'react';
+//Styles
+import './Main.css';
+//Import component Navbar
+import NavBar from '../NavBar/index';
 
 function Main() {
     return (
@@ -10,7 +12,7 @@ function Main() {
             <h6 className="info">Abierto de Viernes a Domingos de 20hs a 6hs.</h6>
             <NavBar/>
         </div>
-    )
+    );
 }
 
-export default Main
+export default Main;

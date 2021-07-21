@@ -1,25 +1,42 @@
-import React, {useEffect, useState, useContext} from 'react'
+import React, {useEffect, useState, useContext} from 'react';
+//Import Cart Context
 import { CartContext } from '../../Context/CartContext';
-import './Order.css'
+//Styles
+import './Order.css';
+//If the order doesn't exist, return this image
 import noresults from './../cart/img.svg';
+//Import firestore/firebase
 import { db } from '../../firebase/firebase';
 
 function Order() {
+    //Importing functions and info from Cart Context
     const {clearCart, idCompra} = useContext(CartContext);
+    //Declaring the array order
     const [order, setOrder] = useState([]);
+    //Start ando stop loader
     const [isLoading, setIsLoading] = useState(true);
+    //OrderExist
+    const [orderExist, setOrderExist] = useState(false);
 
+    //Getting the orders from firestore/firebase
     const getOrder = (Id)=>{
+        //getting the info from the collection orders
         db.collection('orders').onSnapshot((querySnapshot)=>{
             const docs = [];
-
+            //pushing the orders in the array 'docs'
             querySnapshot.forEach((doc)=>{
                 docs.push({...doc.data(), id: doc.id});
             })
+            //Getting the index of the order that matching with the Id
             const indexCompra = docs.findIndex(compra => compra.id === Id);
-            setOrder([docs[indexCompra]]);
             if(indexCompra !== -1){
-                setIsLoading(false)
+                //Pushing the order matching in the array order
+                setOrder([docs[indexCompra]]);
+                //If the order exist, stop the loader
+                setIsLoading(false);
+                setOrderExist(true);
+            }else{
+                setOrderExist(false);
             }
         });
     }
@@ -29,19 +46,11 @@ function Order() {
         clearCart();
     },[order]);
 
-    if(idCompra === ''){
-        return (<>
-            <div className="no-found_container">
-                <p>¡No has hecho una orden!</p>
-                <img alt="no-found-product" src={noresults}></img>
-            </div>
-        </>)
-    }
 
     return (
         <>
-            {isLoading ? (<div className="Loader"></div>)
-            : (<><div className="OrderId">
+            {isLoading ? (<div className="Loader"></div>):null}
+            {orderExist ? (<><div className="OrderId">
                     <h2>Orden:  
                         <span>
                             {idCompra}
@@ -69,10 +78,16 @@ function Order() {
                             </div>);
                         }
                 )}</>
-            )}
+            ) 
+            : (<>
+                <div className="no-found_container">
+                    <p>¡No has hecho una orden!</p>
+                    <img alt="no-found-product" src={noresults}></img>
+                </div>
+              </>)}
            
         </>
-    )
+    );
 }
 
 export default Order;

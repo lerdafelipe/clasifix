@@ -1,14 +1,20 @@
 import React, {useContext} from 'react';
+//Import the context of the cart
 import { CartContext } from '../../Context/CartContext';
+//Style
 import './Cart.css';
+//Import component 
 import ItemCart from '../../components/ItemCart';
+//Import the image if the product doesn't exist
 import noresults from './img.svg';
+//Impor form of Client
 import FormDelivery from '../../components/FormDelivery';
 
 
 function Cart() {
+    //Import functions from Cart Context
     const {CartItems, removeItem, clearCart, totalProduct, total, cartNumber} = useContext(CartContext);
-
+    //If in the cart isn't any product, return the next lines
     if(cartNumber === 0){
         return (<>
                     <div className="no-found_container">

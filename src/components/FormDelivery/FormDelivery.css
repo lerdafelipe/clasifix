@@ -111,3 +111,7 @@
   font-weight: 500;
   color: red;
 }
+.button-viewOrder p {
+  color: #354a67;
+  font-size: 14px;
+}

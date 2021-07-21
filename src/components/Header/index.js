@@ -1,7 +1,10 @@
-import React from 'react'
-import Banner from '../banner/index'
-import Main from '../Main/index'
-import './Header.css'
+import React from 'react';
+//Import component banner with the image
+import Banner from '../banner/index';
+//Import component Main with the navbar and info
+import Main from '../Main/index';
+//Styles
+import './Header.css';
 
 function Header() {
     return (
@@ -9,7 +12,7 @@ function Header() {
             <Banner/>
             <Main/>
         </header>
-    )
-}
+    );
+};
 
 export default Header;

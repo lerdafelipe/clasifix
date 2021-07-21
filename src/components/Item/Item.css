@@ -1,56 +1,57 @@
-.cards{
-    display: flex;
-    flex-direction: column;
-    border-radius: 3px;
-    overflow: hidden;
-    border: 1px solid #e4e4e4;
-    box-shadow: 1px 1px 2px #a4a4a4;
-    background-color: #fff;
-    margin: 15px;
+.cards {
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  box-shadow: 1px 1px 2px #a4a4a4;
+  background-color: #fff;
+  margin: 15px;
 }
-.card__image{
-    border-bottom: 1px solid #ddad49;
-    max-width: 100%;
-    max-height: 258px;
-    overflow: hidden;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card__image {
+  border-bottom: 1px solid #ddad49;
+  max-width: 100%;
+  max-height: 258px;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.card__image img{
-    max-height: 258px;
-    object-fit: unset;
+.card__image img {
+  max-height: 258px;
+  object-fit: unset;
 }
-.card__name{
-    font-size: 12px;
-    margin: 3px 0 5px 5px;
-    color: #354a67;
+.card__name {
+  font-size: 12px;
+  margin: 3px 0 5px 5px;
+  color: #354a67;
 }
-.card__details{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    border-top: 1px solid #e4e4e4;
-    align-items: center;
-    padding: 3px;
+.card__details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-top: 1px solid #e4e4e4;
+  align-items: center;
+  padding: 3px;
 }
-.card__details h4{
-    font-size: 14px;
-    color: #ddad49;
-    padding: 0;
-    margin: 0;
+.card__details h4 {
+  width: auto;
+  font-size: 14px;
+  color: #ddad49;
+  padding: 0;
+  margin: 0;
 }
-.card__details h5{
-    padding: 4px;
-    margin: 0;
-    background-color: #ddad49;
-    color: #354a67;
-    border-radius: 3px;
+.card__details h5 {
+  padding: 4px;
+  margin: 0;
+  background-color: #ddad49;
+  color: #354a67;
+  border-radius: 3px;
 }
 
-@media screen and (max-width:660px) {
-    .cards{
-        margin: 5px;
-    }
+@media screen and (max-width: 660px) {
+  .cards {
+    margin: 5px;
+  }
 }

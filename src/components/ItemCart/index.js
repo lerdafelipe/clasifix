@@ -1,4 +1,5 @@
 import React from 'react'
+//Import the icon for remove item
 import {GrTrash} from 'react-icons/gr';
 
 function ItemCart({item, unitary, remove}) {
@@ -15,7 +16,7 @@ function ItemCart({item, unitary, remove}) {
                 </td>
             </tr>
         </>
-    )
-}
+    );
+};
 
-export default ItemCart
+export default ItemCart;

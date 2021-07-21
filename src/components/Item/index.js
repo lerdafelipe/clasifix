@@ -1,8 +1,10 @@
 import React from 'react'
+//Styles
 import './Item.css'
-//components
-import img from './card-img.png'
-import PropTypes from 'prop-types'
+//Import image for default props
+import img from './card-img.png';
+//Import Proptypes
+import PropTypes from 'prop-types';
 
 function Item({img, name, price}) {
     return (
@@ -18,13 +20,14 @@ function Item({img, name, price}) {
                 </div>
             </div>
         </>
-    )
-}
+    );
+};
 
+//Declaring default prop if the product don´t have a prop detailed
 Item.defaultProps = {
     img: img
-}
-
+};
+//Declaring the types of props
 Item.propTypes= {
     name: PropTypes.string,
     img: PropTypes.string,

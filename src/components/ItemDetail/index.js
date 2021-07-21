@@ -1,7 +1,9 @@
 import React from 'react'
+//Styles
 import './ItemDetail.css'
-//Components
+//Import component counter
 import ItemCount from './../ItemCount/index'
+//Import image if the product haven't a image
 import img from './card-img.png'
 
 function ItemDetail({producto}) {
