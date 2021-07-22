@@ -1,6 +1,8 @@
 import React from 'react'
 //Import the icon for remove item
 import {GrTrash} from 'react-icons/gr';
+//Import Proptypes
+import PropTypes from 'prop-types';
 
 function ItemCart({item, unitary, remove}) {
     return (
@@ -17,6 +19,13 @@ function ItemCart({item, unitary, remove}) {
             </tr>
         </>
     );
+}
+
+//Declaring the types of props
+ItemCart.propTypes= {
+    item: PropTypes.object,
+    unitary: PropTypes.number,
+    remove: PropTypes.func
 };
 
 export default ItemCart;

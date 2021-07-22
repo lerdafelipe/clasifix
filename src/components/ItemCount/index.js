@@ -5,9 +5,11 @@ import { Link } from 'react-router-dom';
 import './ItemCount.css';
 //Import the context
 import {CartContext} from './../../Context/CartContext';
+//Import Proptypes
+import PropTypes from 'prop-types';
 
 
-function ItemCount({stock, onAdd, item}) {
+function ItemCount({stock, item}) {
   //Counter
   const [count, setCount] = useState(1);
   //Quantity of products to buy
@@ -29,7 +31,7 @@ function ItemCount({stock, onAdd, item}) {
   }
 
   //Adding the product to the cart with a quatity
-  onAdd = ()=>{
+  const onAdd = ()=>{
     if(stock > 0){
       //Changing the quantity 'Cantidad'
       setCantidad(cantidad= count);
@@ -59,6 +61,12 @@ function ItemCount({stock, onAdd, item}) {
     </div>
   );
 }
+
+//Declaring the types of props
+ItemCount.propTypes= {
+  item: PropTypes.object,
+  stock: PropTypes.number
+};
 
 
 export default ItemCount;

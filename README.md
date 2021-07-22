@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Final project of ReackJs in [Coderhouse](https://www.coderhouse.com/?utm_source=google&utm_medium=cpc&utm_campaign=brand&gclid=CjwKCAjwi9-HBhACEiwAPzUhHJlQXZMO2h_BLy-WmRVpqyAciaKHVoIv2owLPPsPAf8EkJZNbF64uhoCURIQAvD_BwE)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+This project was created by me in the course of ReactJs in Coderhouse. This project is a e-commerce, made with the React.js library connected with the firebase database.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1.[General Info 🚀](#general-info) 2.[Technologies 📋](#technologies) 3.[Installation 🔧](#installation)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+### General Info
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<a name="general-info"></a>
+The project was ended and was delivered, but if I learn more technologies and see that technology is better for the project, I will add it because i want the best portfolio posible.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<a name="technologies"></a>
+Obviusly i used create react-app for deployed the project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### [React Icons](https://react-icons.github.io/react-icons/search)
 
-### `npm run eject`
+I used the icons of this library because I think that icons were customizable to my UI.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Yup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I used this library for formik validation of form data.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### [Formik](https://formik.org/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+I used this library for send the data to firebasa anda validate it.
 
-## Learn More
+#### [PropTypes](https://es.reactjs.org/docs/typechecking-with-proptypes.html)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+I used Proptypes for check the component's props.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### [Firebase](https://firebase.google.com/?hl=es-419&gclid=CjwKCAjwi9-HBhACEiwAPzUhHBUtSOn1dK1yquj6lZDd_yVaoacsvbOt_hKhL160AHLSf6jhzdg2WBoC6tAQAvD_BwE&gclsrc=aw.ds)
 
-### Code Splitting
+I used firebase for send the orders to the database and get the products and the orders.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+#### [React-Router-Dom](https://reactrouter.com/web/guides/quick-start)
 
-### Analyzing the Bundle Size
+I used this for the routing of the webapp.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<a name="installation"></a>
+This is a little intro about the installation
 
-### Advanced Configuration
+```
+   1. First for get the project run the next command
+$ git clone https://example.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    2.Then locate yourself in the folder of the projec
+$ cd ../path/to/the/file
+    3.Then install the dependencies with the command npm install or npm i
+$ npm install
+    4.Finally, with the command npm run start initialize the project at the port localhost:3000
+$ npm run start
+```

@@ -37,6 +37,7 @@ function Order() {
                 setOrderExist(true);
             }else{
                 setOrderExist(false);
+                setIsLoading(false);
             }
         });
     }
