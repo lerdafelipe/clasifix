@@ -8,7 +8,9 @@ This project was created by me in the course of ReactJs in Coderhouse. This proj
 
 ## Table of Contents
 
-1.[General Info 🚀](#general-info) 2.[Technologies 📋](#technologies) 3.[Installation 🔧](#installation)
+1.[General Info 🚀](#general-info) 
+2.[Technologies 📋](#technologies) 
+3.[Installation 🔧](#installation)
 
 ---
 
