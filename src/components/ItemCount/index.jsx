@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 // Styles
 import './ItemCount.css';
 // Import the context
-import PropTypes from 'prop-types';
 import { CartContext } from '../../Context/CartContext';
-// Import Proptypes
 
 function ItemCount({ stock, item }) {
   // Counter
@@ -50,15 +48,14 @@ function ItemCount({ stock, item }) {
     <div>
       <div className="counter-container">
         <button onClick={counterUp}>+</button>
-        <p>{count}</p>
+          <p>
+            {count}
+          </p>
         <button onClick={countDown}>-</button>
       </div>
-      <button className="onAdd" onClick={onAdd}>
-        Agregar
-        {count}
-        {' '}
-        Items
-      </button>
+        <button className="onAdd" onClick={onAdd}>
+          Agregar {count} Items
+        </button>
       {endPurchase
         ? (<Link className="endPurchase" to="/Cart">¡Finalizar compra!</Link>)
         : (<></>)}
@@ -66,10 +63,5 @@ function ItemCount({ stock, item }) {
   );
 }
 
-// Declaring the types of props
-ItemCount.propTypes = {
-  item: PropTypes.object,
-  stock: PropTypes.number,
-};
 
 export default ItemCount;
