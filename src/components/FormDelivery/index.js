@@ -43,9 +43,10 @@ function FormDelivery() {
             //Const ordenes with the collection orders from firebase
             const ordenes = db.collection('orders');
             //Sending the info to firebase and getting the id
-            ordenes.add(order).then(({id})=>{newIdCompra(id)});
+            ordenes.add(order)
+            .then(({id})=>{newIdCompra(id)})
             //notify that the order was sended
-            setSendOrder(true);
+            .then(setSendOrder(true))
             //If the person don't go to the order 12 second later, the cart will be clear
             setTimeout(clearCart, 12000);
         }

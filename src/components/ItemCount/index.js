@@ -64,8 +64,7 @@ function ItemCount({stock, item}) {
 
 //Declaring the types of props
 ItemCount.propTypes= {
-  item: PropTypes.object,
-  stock: PropTypes.number
+  item: PropTypes.object
 };
 
 

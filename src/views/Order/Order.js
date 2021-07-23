@@ -26,17 +26,14 @@ function Order() {
             //pushing the orders in the array 'docs'
             querySnapshot.forEach((doc)=>{
                 docs.push({...doc.data(), id: doc.id});
-            })
+            }) 
             //Getting the index of the order that matching with the Id
             const indexCompra = docs.findIndex(compra => compra.id === Id);
             if(indexCompra !== -1){
                 //Pushing the order matching in the array order
                 setOrder([docs[indexCompra]]);
                 //If the order exist, stop the loader
-                setIsLoading(false);
                 setOrderExist(true);
-            }else{
-                setOrderExist(false);
                 setIsLoading(false);
             }
         });
@@ -45,16 +42,16 @@ function Order() {
     useEffect(()=>{
         getOrder(idCompra);
         clearCart();
-    },[order]);
+    },[idCompra]);
 
 
     return (
         <>
             {isLoading ? (<div className="Loader"></div>):null}
             {orderExist ? (<><div className="OrderId">
-                    <h2>Orden:  
+                    <h2>Orden:{' '}   
                         <span>
-                            {idCompra}
+                             {idCompra}
                         </span>
                     </h2>
                 </div>
