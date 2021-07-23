@@ -11,7 +11,7 @@ import Header from './components/Header/index';
 //Home
 import Home from './views/Home/Home';
 //Cart
-import Cart from './views/cart/Cart';
+import Cart from './views/cart/cart';
 //Order
 import Order from './views/Order/Order';
 //Categories
