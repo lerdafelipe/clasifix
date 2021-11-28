@@ -59,7 +59,7 @@ This is a little intro about the installation
 
 ```
    1. First for get the project run the next command
-$ git clone https://example.com
+$ git clone https://github.com/lerdafelipe/ecommerce-react
 
     2.Then locate yourself in the folder of the projec
 $ cd ../path/to/the/file
